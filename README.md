@@ -37,7 +37,7 @@ Rendered image examples:
   <tr>
     <th><img src="http://i.imgur.com/viskRMw.png" height="300"/></th>
     <th><img src="http://i.imgur.com/2riqmTx.png" height="300"/></th>
-    <th><img src="http://i.imgur.com/fj9vXM3.png" height="300"/></th>
+    <th><img src="http://i.imgur.com/0UPD116.png" height="300"/></th>
   </tr>
 </table>
 
