@@ -43,6 +43,7 @@ ConfigurePOVRayRender[OptionsPattern[]]:=Module[{povrayPath},
   If[povrayPath==""||!FileExistsQ[povrayPath],Print["path not correct"];Abort[]];
 
   Export[$configFile, povrayPath, "Package"];
+  $POVRayPath = povrayPath;
   povrayPath
 
 ];
@@ -190,6 +191,7 @@ povrayExec[inputPath_,outputPath_,povpath_,povrayOptions_]:=Module[{renderCmd},
 
 Options[POVRayRender]={"Method"->"Mesh","OutputPath"->None,"ImageSize"->{800,600},"RenderOptions"->"+A0.001 -J"};
 
+Block[{$POVRayPath},
 POVRayRender[p_Graphics3D,povpath_String:$POVRayPath,OptionsPattern[]]:=Module[{imageWidth,imageHeight,tracingOptions,inputPath,outputPath,povrayOptions,tempFileStream,povraySceneStr,temp},
 
 (*-----path for povray executables and options -------------*)
@@ -233,7 +235,7 @@ POVRayRender[p_Graphics3D,povpath_String:$POVRayPath,OptionsPattern[]]:=Module[{
     CopyFile[outputPath,OptionValue["OutputPath"]];
     OptionValue["OutputPath"]
   ]
-];
+]];
 
 
 Options[ToPOVRayScene]={"Method"->"Mesh"};
