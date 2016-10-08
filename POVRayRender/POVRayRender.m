@@ -110,7 +110,8 @@ graphicsComplexToMesh2[gc_]:=Module[{scform,NoVertex,vertex,vertexNormals,NoFace
   scform[x_]:=ScientificForm[x,8,NumberFormat->(Row[If[#3=="",{#1},{#1,"e",#3}]]&)];
   vertex=gc[[1]];
   vertexNormals=First@Cases[gc,Rule[VertexNormals,x__]:>x,\[Infinity]];
-  faceIndex=First@Cases[gc,GraphicsGroup[{Polygon[x__],___}]:>x,\[Infinity]]-1;
+  faceIndex=First@Cases[gc,GraphicsGroup[{Polygon[x__],___}]|GraphicsGroup[Annotation[{Polygon[x__], ___}, ___]]:>x,\[Infinity]]-1;
+  (*The pattern with Annotation is for the bug introduced in Mathematica version 11.01*)
   NoVertex=ToString@Length[vertex];
   NoFaces=ToString@Length[faceIndex];
   vertexStr=StringRiffle[Apply["<" <> ToString[#1] <> "," <> ToString[#2] <> "," <> ToString[#3] <> ">" &, Map[ToString[scform[#]] &, vertex, {-1}], {1}], ",\n"];
