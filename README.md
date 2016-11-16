@@ -42,7 +42,7 @@ Rendered image examples:
 </table>
 
 
-For more examples, see documentation (serch "POVRayRender" in Wolfram Lauguage Documentation Center).
+For more examples, see documentation (search "POVRayRender" in Wolfram Lauguage Documentation Center).
 
 [mma]:http://www.wolfram.com/mathematica/
 [povray]:http://www.povray.org/
