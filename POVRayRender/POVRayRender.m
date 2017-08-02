@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Mathematica Package *)
 (* Created by Mathematica Plugin for IntelliJ IDEA *)
 
@@ -181,7 +183,7 @@ generatePovrayStringUsingMesh[p_Graphics3D]:=Module[{gc,camera},
 ];
 
 povrayExec[inputPath_,outputPath_,povpath_,povrayOptions_]:=Module[{renderCmd},
-  renderCmd=povpath<>" "<>povrayOptions<>""<>outputPath<>" "<>inputPath;
+  renderCmd="\""<>povpath<>"\" "<>povrayOptions<>""<>outputPath<>" "<>inputPath;
   Run[renderCmd]
 ];
 (* call povray exectuable to render the graphics *)
