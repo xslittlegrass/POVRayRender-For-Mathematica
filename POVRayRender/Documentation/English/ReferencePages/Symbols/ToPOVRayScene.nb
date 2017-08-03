@@ -1680,7 +1680,7 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"Run", "[", 
     RowBox[{
-    "POVRayRender`Private`$POVRayPath", "<>", "\"\< \>\"", "<>", "scencePath",
+    "\"\\\"\"", "<>", "POVRayRender`Private`$POVRayPath", "<>", "\"\\\"\< \>\"", "<>", "scencePath",
       "<>", "\"\< +W800 +H600 -J +A0.001\>\""}], "]"}], ";"}], "//", 
   "AbsoluteTiming"}]], "Input",
  CellLabel->"In[12]:=",
