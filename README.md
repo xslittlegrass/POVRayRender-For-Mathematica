@@ -20,6 +20,8 @@ Installation
 
 Copy the POVRayRender folder to your `$UserBaseDirectory`. 
 
+> On Windows system should be this directory ```FileNameJoin[{$InstallationDirectory, "AddOns/Packages"}]```
+
 
 Usage
 -----
