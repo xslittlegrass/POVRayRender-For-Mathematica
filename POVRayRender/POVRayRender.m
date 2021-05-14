@@ -175,7 +175,7 @@ graphicsComplexToMesh2[gc_]:=Module[{scform,NoVertex,vertex,vertexNormals,NoFace
 
 
 generatePovrayStringUsingMesh[p_Graphics3D]:=Module[{gc,camera},
-  gc=First@Cases[p,_GraphicsComplex];
+  gc=If[$VersionNumber>=12,First@Cases[p,_GraphicsComplex,Infinity],First@Cases[p,_GraphicsComplex]];
   camera=First@StringCases[ExportString[p/.GraphicsComplex[___]:>GraphicsComplex[{{0,0,0}},{Sphere[1]}],"POV"],"camera {"~~Shortest[x__]~~"}"];
   (*This gets only the camera information. We dump the content of the 3d Graphics so that the export can be much faster.*)
   povStr=StringJoin[globalStr,camera,graphicsComplexToMesh2[gc]];
